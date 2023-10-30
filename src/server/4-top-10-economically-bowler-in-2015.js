@@ -81,7 +81,9 @@ function overBowledByEachBowler() {
 function economyRateOfEachBowler() {
   let obj = {};
   for (let key in runEachBowler) {
-    economyOfEachBowler[key] = runEachBowler[key] / overEachBowler[key];
+    economyOfEachBowler[key] = parseFloat(
+      runEachBowler[key] / overEachBowler[key]
+    ).toFixed(2);
     economyResult.push([key, economyOfEachBowler[key]]);
   }
 
