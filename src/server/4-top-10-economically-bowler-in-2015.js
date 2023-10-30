@@ -82,10 +82,12 @@ function economyRateOfEachBowler() {
   let obj = {};
   for (let key in runEachBowler) {
     economyOfEachBowler[key] = parseFloat(
-      runEachBowler[key] / overEachBowler[key]
+      Number(runEachBowler[key]) / Number(overEachBowler[key])
     ).toFixed(2);
     economyResult.push([key, economyOfEachBowler[key]]);
   }
+
+  console.log(economyOfEachBowler);
 
   economyResult.sort((a, b) => {
     return a[1] - b[1];
